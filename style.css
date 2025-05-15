@@ -1,0 +1,323 @@
+
+/* Hide desktop header and footer by default */
+.desktop-header, .footer {
+  display: none;
+}
+.container {
+  max-width: 844px;    
+  width: 100%;          
+  margin: 0 auto;       
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding-bottom: 80px; 
+  font-family: Arial, sans-serif;
+  background-color: #F6ECD1;
+  color: #212121;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Mobile Styles */
+.mobile-header {
+  font-size: 12pt;
+  text-align: center;
+  width: auto;
+  padding: 10px;
+}
+.mobile-nav-top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+}
+.cart-icon-placeholder {
+  font-size: 1.5rem;
+  color: #212121;
+}
+.mobile-title {
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  margin: 8px;
+  color: #212121;
+}
+.search-box {
+  width: 100%;
+  margin: 15px 2px 4px;
+  max-width: 360px;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color:#DBC4A0;
+  font-size: 12pt;
+  color: #212121;
+  text-indent: 20px;
+}
+.search-icon {
+  position: absolute;
+  left: 12px;                              
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;                    
+}
+.search-icon img {
+  width: 16px;
+  height: 16px;
+}
+.banner {
+  background-image: url("images/Spread\ out\ books.png");
+  background-size: cover;    
+  background-position: center; 
+  background-repeat: no-repeat;
+  margin: 8px auto;
+  height: 250px;
+  background-color: #DBC4A0;
+  border-radius: 16px;
+  position: relative;
+  left: auto;
+  right: auto;
+}
+.banner-text {
+  position: absolute;
+  left: 16px;
+  top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #212121;
+}
+.new-arrivals {
+  margin: 16px 0;
+  padding: 0 16px;
+  max-width: max-content;
+}
+.new-arrivals h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #212121;
+}
+.books {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.book-item {
+  flex: 0 0 auto;
+  width: 150px;
+  margin-right: 12px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.book-cover {
+  width: 100%;
+  height: 230px;
+  background-color: #EFE5C7;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+.price {
+  margin: 4px 0;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #212121;
+}
+.btn { display: none; }
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #EFE5C7;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  z-index: 1000;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: #212121;
+  text-align: center;
+  font-size: 0.75rem;
+}
+.nav-icon {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: #212121;
+}
+.search-icon {
+  position: absolute;
+  left: 12px;              
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;    
+}
+.mocart-icon img{
+  display: block;
+  width: 30px;   
+  height: 30px;
+}
+.mocart-icon {
+  position: absolute;
+  top: 8px;                
+  right: 0px;              
+}
+
+
+/* Desktop Styles */
+@media screen and (min-width: 812px) {
+  .container{
+    max-width: 1368px;        
+    max-height: 972px;        
+    margin: 0 auto;           
+    overflow: hidden;        
+    box-sizing: border-box;
+  }
+  .site-main {
+    height: calc(100vh - 56px);
+    overflow-y: auto;         
+  }
+  .desktop-header {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: #EFE5C7;
+  }
+  .footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 32px;
+    background-color: #EFE5C7;
+    text-align: center;
+    font-size: 9pt;
+    color: #212121;
+    z-index: 1000;
+    left: 0;
+    height: 60px;
+    line-height:0.1px; 
+    max-width: 1368px;  
+    width: 100%;         
+    margin: 0 auto; 
+  }
+  .mobile-header, .mobile-nav {
+    display: none;
+  }
+  img[alt="LOGO"] {
+    width: 250px;     
+    height: auto;     
+  }
+  .desktop-nav-links a {
+    margin-right: 16px;
+    text-decoration: none;
+    color: #A97C50;
+    font-size: 16px;
+  }
+
+  .desktop-search input {
+    width: 370px;
+    height: 30px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #DBC4A0;
+    font-size: 1rem;
+    color: #212121;
+  }
+  .desktop-actions a {
+    margin-right: 32px;
+    text-decoration: none;
+    color: #A97C50;
+    font-size:15px;
+  }
+  .banner {
+    background-image: url("images/Unfolded\ books\,white\,\ simple.png");
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 300px;
+    margin: 24px 32px;
+    left: 4px;
+    padding-right: 5px;
+    background-color: #DBC4A0;
+  }
+  .banner-text {
+    left: 32px;
+    bottom: 32px;
+    font-size: 40px;
+  }
+  .new-arrivals {
+    padding: 0 32px;
+    margin-bottom: 30px;
+    max-width: 1300px;    
+    width: 100%;  
+  }
+  .books {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 127px;
+    overflow: visible;
+    margin-right: 5px;
+  }
+  .book-cover {
+    width: 100%;
+    height: 230px;      
+    border-radius: 8px;
+    overflow: hidden;    
+  }
+  .book-cover img {
+    display: block;      
+    width: 100%;       
+    height: 100%;        
+    object-fit: cover;   
+  }
+  .book-item .btn {
+    display: inline-block;
+    width: 100%;
+    margin: 4px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background-color: #A97C50;
+    color: #212121;
+    font-weight: bold;
+  }
+  .buy-btn {
+    background-color: #EFE5C7;
+    color: #A97C50;
+    border: 1px solid #A97C50;
+  }
+  .cart-icon img{
+    display: block;
+    width: 35px;  
+    height: 35px;
+  }
+  .cart-icon {
+    position: absolute;
+    top: 30px;                 
+    right: 16px;              
+  }
+  .price {
+    margin: 4px 0;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #212121;
+    height: 170px;
+  }
+}
