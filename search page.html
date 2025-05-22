@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Search Results – Metropolis Bookshop</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="mobile-header-top">
+      <button class="icon back-btn" aria-label="Back"></button>
+      <h1 class="mobile-title">Metropolis bookshop</h1>
+      <button class="icon cart-btn" aria-label="Cart"></button>
+    </div>
+    <div class="search-box">
+      <span class="icon search-icon" aria-hidden="true"></span>
+      <input type="search" placeholder="Search" aria-label="Search input"/>
+    </div>
+    <div class="results-header">
+      <h2>Search result</h2>
+      <div class="sort-container">
+        <button id="mobileSortBtn" class="sort-btn">Sort by ↓</button>
+        <ul id="mobileSortOptions" class="sort-options">
+          <li>Price up</li>
+          <li>Price down</li>
+          <li>Best-selling</li>
+          <li>Low purchase</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Desktop Header -->
+  <header class="desktop-header">
+    <button class="icon home-btn" aria-label="Home"></button>
+    <button class="icon cart-btn" aria-label="Cart"></button>
+  </header>
+
+  <!-- Desktop Search -->
+  <div class="desktop-search-bar">
+    <span class="icon search-icon" aria-hidden="true"></span>
+    <input type="search" placeholder="Search" aria-label="Desktop search"/>
+  </div>
+
+  <!-- Desktop Results Header -->
+  <div class="desktop-results-header">
+    <h2>Search Results</h2>
+    <div class="sort-container">
+      <button id="desktopSortBtn" class="sort-btn">Sort by ↓</button>
+      <ul id="desktopSortOptions" class="sort-options">
+        <li>Price up</li>
+        <li>Price down</li>
+        <li>Best-selling</li>
+        <li>Low purchase</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="site-main">
+    <section class="results-grid">
+      <!-- items -->
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">Noise Receptor<br>$14.8 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">Za Zine: A Collection of Weed Bags Found in New York City<br>$25.5 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">Dressed in Black: The Shangri-Las and Their Recorded Legacy<br>$49.9 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">I Ruined Your Life<br>$29.8 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">Aa TYPO Guides 2025 edition<br>$20.0 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+      <div class="item">
+        <div class="cover"></div>
+        <p class="label">We Do Not Part<br>$35.0 AUD</p>
+        <button class="btn buy">Buy</button>
+        <button class="btn add">Add to cart</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Desktop Footer -->
+  <footer class="desktop-footer">
+    <p>Metropolis Bookshop | Level 3, Curtin House | 252 Swanston Street | Melbourne VIC 3000 | (03) 9663 2015 | ABN 35 197 801 707</p>
+    <p><a href="mailto:books@metropolisbookshop.com.au">books@metropolisbookshop.com.au</a></p>
+    <p>We don't ship outside Australia</p>
+  </footer>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-nav">
+    <a href="#" class="nav-item">
+      <button class="icon home-btn" aria-label="Home"></button>
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="#" class="nav-item">
+      <button class="icon search-btn" aria-label="Search"></button>
+      <span class="nav-label">Search</span>
+    </a>
+    <a href="#" class="nav-item">
+      <button class="icon cart-btn" aria-label="Cart"></button>
+      <span class="nav-label">Cart</span>
+    </a>
+  </nav>
+  <script src="script.js"></script>
+</body>
+</html>
