@@ -20,10 +20,16 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
 .icon { 
   width:32px; 
   height:32px; 
-  background:#A97C50; 
+  background:#EFE5C7; 
   border:none; 
   border-radius:4px; 
-  cursor:pointer; }
+  cursor:pointer; 
+}
+.icon img{
+   width:28px; 
+  height:28px;
+
+}
 .mobile-title { 
   font-size:1.25rem; 
   font-weight:bold; 
@@ -49,10 +55,17 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   top:50%; 
   left:16px; 
   transform:translateY(-50%);
-  width:24px; 
-  height:24px; 
-  background:#A97C50; 
+  width:22px; 
+  height:22px; 
+  background:#DBC4A0; 
   border-radius:2px;
+}
+.search-icon img {
+  border-radius:8px; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+  display: block;           
 }
 
 /* Results Header Mobile */
@@ -72,6 +85,7 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   position:relative; 
 }
 .sort-btn {
+  font-weight:bold;
   padding:8px 20px; 
   background:#DBC4A0; 
   border:1px solid #212121; 
@@ -93,6 +107,7 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   display:block; 
 }
 .sort-options li { 
+  font-weight:bold;
   padding:8px 12px; 
   cursor:pointer; 
 }
@@ -125,13 +140,21 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
 }
 .cover { 
   width:143px; 
-  height:180px; 
+  height:195px; 
   background:#DBC4A0; 
   border-radius:8px; 
   margin-bottom:8px;
  }
+.cover img {
+  border-radius:8px; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+  display: block;           
+}
 .label { 
   text-align:center; 
+  font-weight:bold;
   font-size:0.85rem; 
   line-height:1.2; 
   margin-bottom:8px; 
@@ -143,9 +166,15 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   background:#A97C50; 
   color:#FFF;
   border:none; 
-  border-radius:8px; 
+  border-radius:8px;             
   }
-
+.btn:active {
+  background-color: #6b532d;
+}
+.price {
+    font-size: 18px;
+    font-weight:bold;
+}
 /* Mobile Bottom Nav */
 .mobile-nav {
   position:fixed; bottom:0; left:0; width:100%; background:#EFE5C7;
@@ -178,15 +207,17 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   }
   .desktop-search-bar .search-icon {
     position:absolute; top:50%; left:16px; transform:translateY(-50%);
-    width:24px; height:24px; background:#A97C50; border-radius:2px;
+    width:22px; height:22px; background:#DBC4A0; border-radius:2px;
     margin-bottom: 0;
   }
 
   /* Desktop Results Header */
   .desktop-results-header {
     display:flex; justify-content:space-between; align-items:center;
-    position:fixed; left:0; width:100%; padding:12px 32px; background:#F6ECD1; 
-    margin-top: 64px;
+    z-index: 1001;
+    height: 60px;
+    position:fixed; left:0; width:100%; padding:20px 32px 0px; background:#F6ECD1; 
+    margin-top: 60px;
     padding-top: 0px;
   }
   .desktop-results-header h2 {
@@ -201,15 +232,31 @@ body { font-family:Arial,sans-serif; background:#F6ECD1; color:#212121; overflow
   /* Main Content Desktop */
   .site-main { padding:160px 32px 72px; }
   .results-grid { grid-template-columns:repeat(3,1fr); gap:32px; }
-  .cover { width:143px; height:260px; }
+  .cover { width:200px; height:300px; }
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        
+    display: block;            
+  }
   .label { font-size:20px;
    font-weight:bold;
    margin-bottom:8px; min-height:2.8em; }
   .btn { 
-    font-size:15px;
+    font-size:16px;
     font-weight:bold;
-    width:120px; padding:8px 0; }
-
+    width:150px; padding:8px 0; }
+  .btn:hover{
+    background-color: #6b532d;
+  }
+  #desktopSortBtn {
+    font-weight:bold;
+    width: 130px;
+  }
+  .price {
+    font-size: 18px;
+    font-weight:bold;
+  }
   /* Desktop Footer */
   .desktop-footer {
     display:block; background:#EFE5C7; padding:16px 32px; text-align:center;

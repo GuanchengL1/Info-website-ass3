@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Search Results – Metropolis Bookshop</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Search Results  Metropolis Bookshop</title>
+  <link rel="stylesheet" href="search page.css">
+  
 </head>
 <body>
 
   <!-- Mobile Header -->
   <header class="mobile-header">
     <div class="mobile-header-top">
-      <button class="icon back-btn" aria-label="Back"></button>
+      <button class="icon back-btn" aria-label="Back" type="button" onclick="location.href='Homepage.html';"><img src="images/Icon.png" alt="icon"></button>
       <h1 class="mobile-title">Metropolis bookshop</h1>
-      <button class="icon cart-btn" aria-label="Cart"></button>
+      <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
     </div>
     <div class="search-box">
-      <span class="icon search-icon" aria-hidden="true"></span>
+      <span class="icon search-icon" aria-hidden="true"><img src="images/Search.png" alt="icon3"></span>
       <input type="search" placeholder="Search" aria-label="Search input"/>
     </div>
     <div class="results-header">
@@ -35,13 +36,13 @@
 
   <!-- Desktop Header -->
   <header class="desktop-header">
-    <button class="icon home-btn" aria-label="Home"></button>
-    <button class="icon cart-btn" aria-label="Cart"></button>
+    <button class="icon home-btn"  aria-label="Home"  type="button" onclick="location.href='Homepage.html';"><img src="images/Icon.png" alt="icon3"></button>
+    <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
   </header>
 
   <!-- Desktop Search -->
   <div class="desktop-search-bar">
-    <span class="icon search-icon" aria-hidden="true"></span>
+    <span class="icon search-icon" aria-hidden="true"><img src="images/Search.png" alt="icon3"></span>
     <input type="search" placeholder="Search" aria-label="Desktop search"/>
   </div>
 
@@ -64,38 +65,44 @@
     <section class="results-grid">
       <!-- items -->
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">Noise Receptor<br>$14.8 AUD</p>
+        <div class="cover"><img src="images/book1.png" alt="book1"></div>
+        <p class="label">Noise Receptor</p>
+        <p class="price">$14.8 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">Za Zine: A Collection of Weed Bags Found in New York City<br>$25.5 AUD</p>
+        <div class="cover"><img src="images/book2.jpg" alt="icon3"></div>
+        <p class="label">Za Zine: A Collection of Weed Bags Found in New York City</p>
+        <p class="price">$25.5 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">Dressed in Black: The Shangri-Las and Their Recorded Legacy<br>$49.9 AUD</p>
+        <div class="cover"><img src="images/book3.jpg" alt="icon3"></div>
+        <p class="label">Dressed in Black: The Shangri-Las and Their Recorded Legacy</p>
+        <p class="price">$49.9 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">I Ruined Your Life<br>$29.8 AUD</p>
+        <div class="cover"><img src="images/book4.jpg" alt="icon3"></div>
+        <p class="label">I Ruined Your Life</p>
+        <p class="price">$29.8 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">Aa TYPO Guides 2025 edition<br>$20.0 AUD</p>
+        <div class="cover"><img src="images/book5.png" alt="icon3"></div>
+        <p class="label">Aa TYPO Guides 2025 edition</p>
+        <p class="price">$20.0 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
       <div class="item">
-        <div class="cover"></div>
-        <p class="label">We Do Not Part<br>$35.0 AUD</p>
+        <div class="cover"><img src="images/book6.jpg" alt="icon3"></div>
+        <p class="label">We Do Not Part</p>
+        <p class="price">$35.0 AUD</p>
         <button class="btn buy">Buy</button>
         <button class="btn add">Add to cart</button>
       </div>
@@ -112,18 +119,18 @@
   <!-- Mobile Bottom Navigation -->
   <nav class="mobile-nav">
     <a href="#" class="nav-item">
-      <button class="icon home-btn" aria-label="Home"></button>
+      <button class="icon home-btn" aria-label="Home" type="button" onclick="location.href='Homepage.html';"><img src="images/Icon.png" alt="icon3"></button>
       <span class="nav-label">Home</span>
     </a>
     <a href="#" class="nav-item">
-      <button class="icon search-btn" aria-label="Search"></button>
+      <button class="icon search-btn" aria-label="Search"><img src="images/Search.png" alt="icon3"></button>
       <span class="nav-label">Search</span>
     </a>
     <a href="#" class="nav-item">
-      <button class="icon cart-btn" aria-label="Cart"></button>
+      <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
       <span class="nav-label">Cart</span>
     </a>
   </nav>
-  <script src="script.js"></script>
+  <script src="search page.js"></script>
 </body>
 </html>
