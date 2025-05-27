@@ -35,7 +35,6 @@ body {
 .icon {
   width: 32px;
   height: 32px;
-  background-color: #DDD;
   border-radius: 4px;
 }
 
@@ -55,9 +54,14 @@ body {
 .detail-cover {
   width: 311px;
   height: 397px;
-  background-color: #DDD;
   border-radius: 8px;
   margin: 12px auto;
+}
+.detail-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 保持纵横比填满整个容器 */
+  display: block;      /* 去除 img 自带的行内空隙 */
 }
 .detail-title {
   font-size: 1.5rem;
@@ -139,7 +143,6 @@ body {
   width: 28px;
   height: 28px;
   margin-bottom: 4px;
-  background-color: #DDD;
   border-radius: 4px;
 }
 .nav-label {
@@ -154,6 +157,29 @@ body {
  
   z-index: 1000;
 }
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 按比例裁切并填满 */
+  display: block;     /* 去掉行内空隙 */
+}
+
+/* 如果是底部 nav 的小图标，可以同理 */
+.nav-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 如果你还有搜索框里的小放大镜，也可以这样 */
+.search-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 
 /* —— Desktop Styles (≥768px) —— */
 @media (min-width: 768px) {
@@ -213,14 +239,14 @@ body {
   .detail-title {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    font-size: 2rem;
+    font-size: 40px;
     margin: 0 0 8px;
   }
  
   .detail-author {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    font-size: 1.5rem;
+    font-size: 30px;
     margin: 0 0 12px;
   }
  
@@ -243,7 +269,7 @@ body {
   .detail-actions .btn {
     width: 100%;
     padding: 16px 0;
-    font-size: 1rem;
+    font-size: 16px;
     border-radius: 8px;
     margin: 0;
   }
@@ -253,6 +279,13 @@ body {
     grid-column: 1 / 2;
     grid-row: 6 / 7;
     margin: 0;
+    font-size: 25px;
+  }
+  .detail-info h2{
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    margin: 0;
+    font-size: 25px;
   }
 
  
@@ -260,6 +293,7 @@ body {
     grid-column: 1 / 3;
     grid-row: 7 / 8;
     margin: 16px 0 0;
+    font-size: 25px;
   }
 
   .desktop-footer {
@@ -297,7 +331,6 @@ body {
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-    background: #A97C50;
     border-radius: 2px;
   }
 
