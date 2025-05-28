@@ -73,6 +73,7 @@ body {
   font-size: 1.25rem;
   font-weight: 500;
   margin: 4px 0 12px;
+  color:#A97C50 ;
 }
 .detail-price {
   font-size: 1.875rem;
@@ -248,6 +249,7 @@ body {
     grid-row: 2 / 3;
     font-size: 30px;
     margin: 0 0 12px;
+    color:#A97C50 ;
   }
  
   .detail-price {
