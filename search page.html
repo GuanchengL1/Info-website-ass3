@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Search Results  Metropolis Bookshop</title>
   <link rel="stylesheet" href="search page.css">
+  <script src="cart.js"></script>
   
 </head>
 <body>
@@ -14,7 +15,7 @@
     <div class="mobile-header-top">
       <button class="icon back-btn" aria-label="Back" type="button" onclick="location.href='index.html';"><img src="images/Icon.png" alt="icon"></button>
       <h1 class="mobile-title">Metropolis bookshop</h1>
-      <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
+      <button class="icon cart-btn" aria-label="Cart" onclick="location.href='shopping-cart.html';"><img src="images/cart2.png" alt="icon3"></button>
     </div>
     <div class="search-box">
       <span class="icon search-icon" aria-hidden="true"><img src="images/Search.png" alt="icon3"></span>
@@ -37,7 +38,7 @@
   <!-- Desktop Header -->
   <header class="desktop-header">
     <button class="icon home-btn"  aria-label="Home"  type="button" onclick="location.href='index.html';"><img src="images/Icon.png" alt="icon3"></button>
-    <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
+    <button class="icon cart-btn" aria-label="Cart" onclick="location.href='shopping-cart.html';"><img src="images/cart2.png" alt="icon3"></button>
   </header>
 
   <!-- Desktop Search -->
@@ -69,14 +70,14 @@
         <p class="label">Noise Receptor</p>
         <p class="price">$14.8 AUD</p>
         <button class="btn buy">Buy</button>
-        <button class="btn add">Add to cart</button>
+        <button class="btn add" onclick="addToCartAndRedirect('noise-receptor')">Add to cart</button>
       </div>
       <div class="item">
         <div class="cover"><img src="images/book2.jpg" alt="icon3"></div>
         <p class="label">Za Zine: A Collection of Weed Bags Found in New York City</p>
         <p class="price">$25.5 AUD</p>
         <button class="btn buy">Buy</button>
-        <button class="btn add">Add to cart</button>
+        <button class="btn add" onclick="addToCartAndRedirect('za-zine')">Add to cart</button>
       </div>
       <div class="item">
         <div class="cover" onclick="location.href='detail2.html';"><img src="images/book3.jpg" alt="icon3"></div>
@@ -127,10 +128,18 @@
       <span class="nav-label">Search</span>
     </a>
     <a href="#" class="nav-item">
-      <button class="icon cart-btn" aria-label="Cart"><img src="images/cart2.png" alt="icon3"></button>
-      <span class="nav-label">Cart</span>
+      <button class="icon cart-btn" aria-label="Cart" onclick="location.href='shopping-cart.html';"><img src="images/cart2.png" alt="icon3"></button>
+      <span class="nav-label" >Cart</span>
     </a>
   </nav>
   <script src="search page.js"></script>
+  <script>
+    function addToCartAndRedirect(productId) {
+      const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+      cart[productId] = (cart[productId] || 0) + 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'shopping-cart.html';
+    }
+</script>
 </body>
 </html>

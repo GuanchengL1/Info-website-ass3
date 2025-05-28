@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Metropolis Bookshop</title>
   <link rel="stylesheet" href="style.css">
+  <script src="cart.js"></script>
 </head>
 <body>
 <div class="container">
   <!-- Mobile Header -->
   <header class="mobile-header">
     <h1>Metropolis bookshop</h1>
-    <div class="mocart-icon">
+    <div class="mocart-icon" onclick="location.href='shopping-cart.html';">
       <img src="images/cart2.png" alt="mocart" />
     </div>
     <div class="search-box" onclick="location.href='search page.html';">
-      <span class="search-icon">
+      <span class="search-icon" onclick="location.href='search page.html';">
       <img src="images/Search.png" alt="searcher">
       </span>
       <input type="text" placeholder="Search">
@@ -24,7 +25,7 @@
 
   <!-- Desktop Header -->
   <header class="desktop-header">
-    <div class="cart-icon">
+    <div class="cart-icon" onclick="location.href='shopping-cart.html';">
       <img src="images/cart2.png" alt="Cart" />
     </div>
     <div class="logo">
@@ -53,15 +54,15 @@
   <section class="new-arrivals">
     <h2>New Arrivals</h2>
     <div class="books">
-      <div class="book-item" onclick="location.href='detail.html';"><div class="book-cover"> <img src="images/book1.png" alt="book1"></div><p class="price">Noise Receptor Journal Issue No. 13</p>
+      <div class="book-item" ><div class="book-cover" onclick="location.href='detail.html';"> <img src="images/book1.png" alt="book1"></div><p class="price">Noise Receptor Journal Issue No. 13</p>
       <p class="Price">$14.8 AUD</p>
-      <button class="btn">Add to cart</button><button class="btn buy-btn">buy</button></div>
+      <button class="btn" onclick="addToCartAndRedirect('noise-receptor')">Add to cart</button><button class="btn buy-btn">buy</button></div>
       <div class="book-item"><div class="book-cover"> <img src="images/book2.jpg" alt="book2"></div><p class="price">Dressed in Black: The Shangri-Las and Their Recorded Legacy</p>
       <p class="Price">$49.9 AUD</p>
       <button class="btn">Add to cart</button><button class="btn buy-btn">buy</button></div>
-      <div class="book-item" onclick="location.href='detail2.html';"><div class="book-cover"> <img src="images/book3.jpg" alt="book3"></div><p class="price">Za Zine: A Collection of Weed Bags Found in New York City</p>
+      <div class="book-item"><div class="book-cover" onclick="location.href='detail2.html';"> <img src="images/book3.jpg" alt="book3"></div><p class="price">Za Zine: A Collection of Weed Bags Found in New York City</p>
       <p class="Price">$25.5 AUD</p>
-      <button class="btn">Add to cart</button><button class="btn buy-btn">buy</button></div>
+      <button class="btn" onclick="addToCartAndRedirect('za-zine')">Add to cart</button><button class="btn buy-btn">buy</button></div>
       <div class="book-item"><div class="book-cover"> <img src="images/book4.jpg" alt="book4"></div><p class="price">I Ruined Your Life</p>
       <p class="Price">$29.8 AUD</p>
       <button class="btn">Add to cart</button><button class="btn buy-btn">buy</button></div>
@@ -82,8 +83,16 @@
   <nav class="mobile-nav">
     <a href="#"><div class="nav-icon"><img src="images/Icon.png" alt="Icon1"></div><span class="nav-label">Home</span></a>
     <a href="#"><div class="nav-icon" type="button" onclick="location.href='search page.html';"><img src="images/Search.png" alt="Icon2"></div><span class="nav-label">Search</span></a>
-    <a href="#"><div class="nav-icon"><img src="images/cart2.png" alt="Icon3"></div><span class="nav-label">Cart</span></a>
+    <a href="#"><div class="nav-icon" onclick="location.href='shopping-cart.html';"><img src="images/cart2.png" alt="Icon3"></div><span class="nav-label">Cart</span></a>
   </nav>
 </div>
 </body>
+<script>
+  function addToCartAndRedirect(productId) {
+    const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+    cart[productId] = (cart[productId] || 0) + 1;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'shopping-cart.html';
+  }
+</script>
 </html>
