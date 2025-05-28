@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Book Detail - Metropolis Bookshop</title>
   <link rel="stylesheet" href="detail2.css"/>
+  <script src="cart.js"></script>
 </head>
 <body>
 
@@ -42,12 +43,12 @@
     <p class="detail-price">$25.50 AUD</p>
 
     <div class="detail-actions">
-      <button class="btn add">Add to cart</button>
+      <button class="btn add" onclick="addToCartAndRedirect('za-zine')">Add to cart</button>
       <button class="btn buy">Buy</button>
     </div>
 
     <div class="detail-description">
-      <br><br>
+      <br>
       <strong>Book synopsis</strong><br>
        Noise Receptor Journal Issue no. 13 illuminating the post-industrial underground. Noise Receptor Journal: sound with impact—analysing the abstract is one of the most well-respected underground zines dealing with post-industrial music, with a particular focus on dark ambient, death industrial, heavy electronics, and power electronics.<br>
       Long-form interviews with: The Black Maghreb, Born Erased, Old Tower, Wilt, Xn Recordings<br>
@@ -99,6 +100,14 @@
     <p><a href="mailto:books@metropolisbookshop.com.au">books@metropolisbookshop.com.au</a></p>
     <p>We don't ship outside Australia</p>
   </footer>
+  <script>
+    function addToCartAndRedirect(productId) {
+      const cart = JSON.parse(localStorage.getItem('cart') || '{}');
+      cart[productId] = (cart[productId] || 0) + 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'shopping-cart.html';
+    }
+</script>
 
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Shopping Cart – Metropolis Bookshop</title>
+  <link rel="stylesheet" href="shopping-cart.css"/>
+</head>
+<body>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="mobile-header-top">
+      <button class="icon back-btn" onclick="location.href='index.html'" aria-label="Back"></button>
+      <h1 class="mobile-title">Shopping Cart</h1>
+      <button class="icon cart-btn" aria-label="Cart"></button>
+    </div>
+  </header>
+
+  <!-- Desktop Header -->
+  <header class="desktop-header">
+    <button class="icon back-btn" onclick="location.href='index.html'" aria-label="Back"></button>
+    <button class="icon cart-btn" aria-label="Cart"></button>
+  </header>
+
+  <!-- Clear Cart 按钮 -->
+  
+
+  <!-- Main Content -->
+  <main class="detail-main" id="cart-main">
+    <!-- JS will inject cart items here -->
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="nav-item">
+      <div class="nav-icon"></div>
+      <span class="nav-label">Home</span>
+    </a>
+    <a href="search-page.html" class="nav-item">
+      <div class="nav-icon"></div>
+      <span class="nav-label">Search</span>
+    </a>
+    <a href="shopping-cart.html" class="nav-item">
+      <div class="nav-icon"></div>
+      <span class="nav-label">Cart</span>
+    </a>
+  </nav>
+
+  <!-- Desktop Footer -->
+  <footer class="desktop-footer">
+    Metropolis Bookshop | Level 3, Curtin House | 252 Swanston Street | Melbourne VIC 3000 | (03) 9663 2015 | ABN 35 197 801 707
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>
