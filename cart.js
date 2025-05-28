@@ -13,7 +13,7 @@ const PRODUCTS = {
     id: 'za-zine',
     title: 'Za Zine: A Collection of Weed Bags Found in New York City',
     price: 25.5,
-    cover: 'images/book3.png',
+    cover: 'images/book3.jpg',
     description:'November 2023 to February 2024 issue documenting NYC weed bags, featuring art, interviews, and underground culture commentary.'
   }
 };
@@ -61,25 +61,24 @@ function renderCart() {
     });
   }
 
-  // 运费
+
   const shipping = document.createElement('div');
   shipping.className = 'cart-shipping';
   shipping.textContent = 'Shipping: Free';
   main.appendChild(shipping);
 
-  // 优惠
+ 
   const coupon = document.createElement('div');
   coupon.className = 'cart-coupon';
   coupon.innerHTML = '<label>Coupon code: <input type="text" id="coupon-input"/></label><button id="apply-coupon">Apply</button>';
   main.appendChild(coupon);
 
-  // 备注
+ 
   const note = document.createElement('div');
   note.className = 'cart-note';
   note.textContent = 'Free shipping for orders over $50 AUD.';
   main.appendChild(note);
 
-  // 总计 & 支付
   const summary = document.createElement('div');
   summary.className = 'cart-total';
   summary.innerHTML = `<span>Total:</span><span>$ ${total.toFixed(2)} AUD</span>`;
@@ -90,7 +89,6 @@ function renderCart() {
   pay.textContent = 'Pay now';
   main.appendChild(pay);
 
-  // 增减数量
   document.querySelectorAll('.increase, .decrease').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id, c = loadCart();
@@ -103,7 +101,7 @@ function renderCart() {
     });
   });
 
-  // 删除
+ 
   document.querySelectorAll('.remove-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const c = loadCart();
@@ -112,7 +110,7 @@ function renderCart() {
     });
   });
 
-  // 清空购物车
+
   document.getElementById('clear-cart').addEventListener('click', () => {
     if (confirm('Are you sure you want to clear your cart?')) {
       localStorage.removeItem('cart');
@@ -120,7 +118,6 @@ function renderCart() {
     }
   });
 
-  // 应用优惠
   document.getElementById('apply-coupon')?.addEventListener('click', () => {
     alert('Coupon applied (demo)');
   });
