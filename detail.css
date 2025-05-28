@@ -60,8 +60,8 @@ body {
 .detail-cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* 保持纵横比填满整个容器 */
-  display: block;      /* 去除 img 自带的行内空隙 */
+  object-fit: cover;   
+  display: block;      
 }
 .detail-title {
   font-size: 1.5rem;
@@ -78,7 +78,7 @@ body {
   font-size: 1.875rem;
   font-weight: bold;
   margin: 4px 0 12px;
-  text-align: left; /* 改为左对齐 */
+  text-align: left; 
 }
 .detail-actions .btn {
   width: 100%;
@@ -160,11 +160,11 @@ body {
 .icon img {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* 按比例裁切并填满 */
-  display: block;     /* 去掉行内空隙 */
+  object-fit: cover;  
+  display: block;     
 }
 
-/* 如果是底部 nav 的小图标，可以同理 */
+
 .nav-icon img {
   width: 100%;
   height: 100%;
@@ -172,7 +172,7 @@ body {
   display: block;
 }
 
-/* 如果你还有搜索框里的小放大镜，也可以这样 */
+
 .search-icon img {
   width: 100%;
   height: 100%;
