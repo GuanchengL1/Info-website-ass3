@@ -6,7 +6,7 @@
 .container {
   max-width: 844px;    
   width: 100%;          
-  margin: 0 auto;       
+  margin: 0 auto;   
 }
 .search-box {
   cursor: pointer;
@@ -230,10 +230,11 @@ body {
     margin: 0 auto;           
     overflow: hidden;        
     box-sizing: border-box;
+    padding-bottom: 80px;
   }
   .site-main {
     height: calc(100vh - 56px);
-    overflow-y: auto;         
+    overflow-y: auto;      
   }
   .desktop-header {
     
