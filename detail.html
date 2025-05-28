@@ -105,13 +105,9 @@
 </body>
 <script>
 function addToCartAndRedirect(productId) {
-  // 1. 读现有购物车
   const cart = JSON.parse(localStorage.getItem('cart') || '{}');
-  // 2. 增加数量
   cart[productId] = (cart[productId] || 0) + 1;
-  // 3. 写回 localStorage
   localStorage.setItem('cart', JSON.stringify(cart));
-  // 4. 跳转到购物车页面
   window.location.href = 'shopping-cart.html';
 }
 </script>
