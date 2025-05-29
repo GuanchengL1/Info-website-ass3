@@ -45,7 +45,7 @@
 
     <div class="detail-actions">
       <button class="btn add" onclick="addToCartAndRedirect('noise-receptor')">Add to cart</button>
-      <button class="btn buy">Buy</button>
+      <button class="btn buy" onclick="buyAndCheckout('noise-receptor')">Buy</button>
     </div>
 
     <div class="detail-description">
@@ -110,5 +110,13 @@ function addToCartAndRedirect(productId) {
   localStorage.setItem('cart', JSON.stringify(cart));
   window.location.href = 'shopping-cart.html';
 }
+</script>
+<script>
+  function buyAndCheckout(productId) {
+    const cart = loadCart();           // 来自 cart.js
+    cart[productId] = (cart[productId]||0) + 1;
+    saveCart(cart);                    // 存回 localStorage
+    window.location.href = 'checkout.html';
+  }
 </script>
 </html>

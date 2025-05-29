@@ -44,7 +44,7 @@
 
     <div class="detail-actions">
       <button class="btn add" onclick="addToCartAndRedirect('za-zine')">Add to cart</button>
-      <button class="btn buy">Buy</button>
+      <button class="btn buy" onclick="buyAndCheckout('za-zine')">Buy</button>
     </div>
 
     <div class="detail-description">
@@ -107,6 +107,14 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       window.location.href = 'shopping-cart.html';
     }
+</script>
+<script>
+  function buyAndCheckout(productId) {
+    const cart = loadCart();
+    cart[productId] = (cart[productId]||0) + 1;
+    saveCart(cart);
+    window.location.href = 'checkout.html';
+  }
 </script>
 
 </body>
