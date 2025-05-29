@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Checkout - Metropolis Bookshop</title>
+  <title>Checkout – Metropolis Bookshop</title>
   <link rel="stylesheet" href="checkout.css"/>
+  <script src="cart.js"></script>
 </head>
 <body>
 
   <!-- Mobile Header -->
   <header class="mobile-header">
     <div class="mobile-header-top">
-      <button class="icon back-btn" onclick="history.back()" aria-label="Back"><img src="images/back.png" alt="icon"></button>
+      <button class="icon back-btn" onclick="history.back()" aria-label="Back">
+        <img src="images/back.png" alt="icon">
+      </button>
       <h1 class="mobile-title">Checkout</h1>
     </div>
   </header>
 
   <!-- Desktop Header -->
   <header class="desktop-header">
-    <button class="icon back-btn" onclick="history.back()" aria-label="Back"><img src="images/back.png" alt="icon"></button>
+    <button class="icon back-btn" onclick="history.back()" aria-label="Back">
+      <img src="images/back.png" alt="icon">
+    </button>
   </header>
 
   <!-- Main Content -->
@@ -26,22 +31,37 @@
     <div class="checkout-grid">
       <section class="order-summary">
         <h2>Order Summary</h2>
-        <ul>
-          <li><span>Noise Receptor Journal Issue No. 13 × 1</span><span>$ 14.8 AUD</span></li>
-          <li><span>Za Zine: A Collection … × 2</span><span>$ 51.0 AUD</span></li>
+        <ul id="summary-list">
         </ul>
-        <div class="summary-row"><span>Subtotal</span><span>$ 65.8 AUD</span></div>
-        <div class="summary-row"><span>Shipping</span><span>Free</span></div>
-        <div class="summary-row total-row"><span>Total</span><span>$ 65.8 AUD</span></div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">–</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="summary-total">–</span>
+        </div>
       </section>
-
       <section class="payment-details">
         <h2>Payment Details</h2>
         <form id="payment-form">
           <div class="pm-group">
-            <label><input type="radio" name="pm" value="credit" checked/> Credit Card</label>
-            <label><input type="radio" name="pm" value="paypal"/> PayPal</label>
-            <label><input type="radio" name="pm" value="applepay"/> Apple Pay</label>
+            <label>
+              <input type="radio" name="pm" value="credit" checked/>
+              Credit Card
+            </label>
+            <label>
+              <input type="radio" name="pm" value="paypal"/>
+              PayPal
+            </label>
+            <label>
+              <input type="radio" name="pm" value="applepay"/>
+              Apple Pay
+            </label>
           </div>
           <div class="cc-fields">
             <label>Cardholder Name
@@ -73,10 +93,43 @@
   </footer>
 
   <script>
-    document.getElementById('payment-form').addEventListener('submit', e => {
+
+    function renderOrderSummary() {
+      const cart = loadCart();
+      const ul = document.getElementById('summary-list');
+      ul.innerHTML = '';
+
+      let subtotal = 0;
+      for (let id in cart) {
+        const qty = cart[id];
+        const prod = PRODUCTS[id];
+        if (!prod) continue;
+        const lineTotal = prod.price * qty;
+        subtotal += lineTotal;
+
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${prod.title} × ${qty}</span>
+          <span>$ ${lineTotal.toFixed(2)} AUD</span>
+        `;
+        ul.appendChild(li);
+      }
+
+      document.getElementById('summary-subtotal')
+              .textContent = `$ ${subtotal.toFixed(2)} AUD`;
+      document.getElementById('summary-total')
+              .textContent = `$ ${subtotal.toFixed(2)} AUD`;
+    }
+
+
+    window.addEventListener('DOMContentLoaded', renderOrderSummary);
+
+    document.getElementById('payment-form')
+            .addEventListener('submit', e => {
       e.preventDefault();
-      const choice = document.querySelector('input[name="pm"]:checked').value;
-      alert('You selected: ' + choice + ' (demo only).');
+      renderOrderSummary();
+      const total = document.getElementById('summary-total').textContent;
+      alert('Proceeding to pay: ' + total + ' (demo only).');
     });
   </script>
 </body>
