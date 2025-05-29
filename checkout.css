@@ -1,0 +1,176 @@
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #F6ECD1;
+  color: #212121;
+  overflow-x: hidden;
+}
+.container {
+  max-width: 844px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 移动端隐藏桌面 Header/Footer */
+.desktop-header,
+.desktop-footer {
+  display: none;
+}
+
+/* —— Mobile Header —— */
+.mobile-header {
+  background: #EFE5C7;
+}
+.mobile-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #212121;
+}
+.icon {
+  width: 32px; height: 32px;
+  background: #DDD;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.mobile-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* —— Main Content —— */
+.checkout-main {
+  padding: 80px 16px 32px; /* 考虑 header 高度 */
+}
+.checkout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* —— 订单概要 —— */
+.order-summary {
+  background: #dbc4a0;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.order-summary h2 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.order-summary ul {
+  list-style: none;
+}
+.order-summary ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #EFE5C7;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.total-row {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+/* —— 支付详情 —— */
+.payment-details {
+  background: #dbc4a0;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.payment-details h2 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.pm-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.pm-group label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+.cc-fields label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+.cc-fields input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.cc-row {
+  display: flex;
+  gap: 16px;
+}
+.cc-row label {
+  flex: 1;
+}
+
+/* —— 确认按钮 —— */
+.confirm-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px 0;
+  background: #A97C50;
+  color: #FFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .2s;
+}
+.confirm-btn:hover {
+  background: #6b532d;
+}
+
+
+@media (min-width: 768px) {
+  /* 1) 让 container 撑满 */
+  .container {
+    max-width: none;      /* 取消844px限制 */
+    padding: 0 32px;      /* 左右内边距 32px */
+  }
+
+  /* 2) 让右侧栏也能随着 flex:1 拉伸 */
+  .payment-details {
+    max-width: none;      /* 取消300px限制 */
+  }
+
+  /* —— 下面保持你原来的并排规则 —— */
+  .checkout-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    padding-top: 60px;  
+  }
+  .order-summary {
+    flex: 2;
+    min-width: 0;
+  }
+  .payment-details {
+    padding-top: 80px;
+    flex: 1;
+    min-width: 0;
+  }
+}
