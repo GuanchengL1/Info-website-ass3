@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
 }
 
-/* 移动端隐藏桌面 Header/Footer */
+
 .desktop-header,
 .desktop-footer {
   display: none;
@@ -34,19 +34,26 @@ body {
 }
 .icon {
   width: 32px; height: 32px;
-  background: #DDD;
+  background: #EFE5C7;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;     
+}
 .mobile-title {
   font-size: 1.25rem;
   font-weight: bold;
+  align-items: center;
 }
 
 /* —— Main Content —— */
 .checkout-main {
-  padding: 80px 16px 32px; /* 考虑 header 高度 */
+  padding: 80px 16px 32px; 
 }
 .checkout-grid {
   display: flex;
@@ -54,7 +61,7 @@ body {
   gap: 24px;
 }
 
-/* —— 订单概要 —— */
+
 .order-summary {
   background: #dbc4a0;
   padding: 16px;
@@ -84,7 +91,7 @@ body {
   font-size: 1.125rem;
 }
 
-/* —— 支付详情 —— */
+
 .payment-details {
   background: #dbc4a0;
   padding: 16px;
@@ -125,7 +132,6 @@ body {
   flex: 1;
 }
 
-/* —— 确认按钮 —— */
 .confirm-btn {
   margin-top: 16px;
   width: 100%;
@@ -145,24 +151,26 @@ body {
 
 
 @media (min-width: 768px) {
-  /* 1) 让 container 撑满 */
+
   .container {
-    max-width: none;      /* 取消844px限制 */
-    padding: 0 32px;      /* 左右内边距 32px */
+    max-width: none;    
+    padding: 0 32px;      
   }
 
-  /* 2) 让右侧栏也能随着 flex:1 拉伸 */
+
   .payment-details {
-    max-width: none;      /* 取消300px限制 */
+    max-width: none;
+    font-weight: bold;
   }
 
-  /* —— 下面保持你原来的并排规则 —— */
+
   .checkout-grid {
     display: flex;
     flex-direction: row;
     gap: 32px;
     justify-content: center;
-    padding-top: 60px;  
+    padding-top: 60px;
+    font-size: 25px;
   }
   .order-summary {
     flex: 2;
@@ -173,4 +181,22 @@ body {
     flex: 1;
     min-width: 0;
   }
+  .desktop-footer {
+    display: block;
+    background: #EFE5C7;
+    text-align: center;
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    padding: 16px;
+    font-size: 0.75rem;
+  }
+  .summary-row.total-row {
+    font-size: 30px;
+  }
+  .order-summary h2 {
+  font-size: 30px;  
+  font-weight: bold;
+  }
+
 }
