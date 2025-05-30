@@ -164,29 +164,7 @@ body {
   color: #212121;
 }
 .btn { display: none; }
-.mobile-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #EFE5C7;
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
-  z-index: 1000;
-}
-.mobile-nav a {
-  text-decoration: none;
-  color: #212121;
-  text-align: center;
-  font-size: 0.75rem;
-}
-.nav-icon {
-  display: block;
-  font-size: 1.25rem;
-  margin-bottom: 4px;
-  color: #212121;
-}
+
 .search-icon {
   position: absolute;
   left: 12px;              

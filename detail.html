@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Book Detail - Metropolis Bookshop</title>
+  <link rel="stylesheet" href="global bottom.css">
   <link rel="stylesheet" href="detail.css"/>
   <script src="cart.js"></script>
 </head>
@@ -113,9 +114,9 @@ function addToCartAndRedirect(productId) {
 </script>
 <script>
   function buyAndCheckout(productId) {
-    const cart = loadCart();           // 来自 cart.js
+    const cart = loadCart();           
     cart[productId] = (cart[productId]||0) + 1;
-    saveCart(cart);                    // 存回 localStorage
+    saveCart(cart);                  
     window.location.href = 'checkout.html';
   }
 </script>

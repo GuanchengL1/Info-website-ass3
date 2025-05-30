@@ -86,16 +86,23 @@ a {
   .success-main p {
     font-size: 2rem;
   }
-  .footer {
-    display: block;
+ .footer {
+    display: flex;
     position: fixed;
-    bottom: 0; left: 0;
-    width: 100%;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 32px;
     background-color: #EFE5C7;
-    color: #212121;
-    font-size: 0.75rem;
-    padding: 12px 32px;
-    line-height: 1.2;
     text-align: center;
+    font-size: 9pt;
+    color: #212121;
+    z-index: 1000;
+    left: 0;
+    height: 60px;
+    line-height:0.1px; 
+    max-width: 1368px;  
+    width: 100%;         
+    margin: 0 auto; 
   }
 }
