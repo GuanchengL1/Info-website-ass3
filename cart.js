@@ -25,6 +25,12 @@ function loadCart() {
 function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
+function addToCart(productId, qty = 1) {
+  const cart = loadCart();
+  cart[productId] = (cart[productId] || 0) + qty;
+  saveCart(cart);
+  alert('✅ add to cart succesfully');
+}
 
 function renderCart() {
   const main = document.getElementById('cart-main');

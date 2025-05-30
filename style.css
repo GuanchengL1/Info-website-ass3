@@ -98,7 +98,7 @@ body {
   height: 16px;
 }
 .banner {
-  background-image: url("images/Spread\ out\ books.png");
+  background-image: url('images/Spread out books.png');
   background-size: cover;    
   background-position: center; 
   background-repeat: no-repeat;
@@ -129,6 +129,12 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #212121;
+}
+.new-arrivals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  display: block;     
 }
 .books {
   width: 100%;
