@@ -1,6 +1,4 @@
 /* global.css */
-
-/* —— 移动端底部导航栏 —— */
 .mobile-nav {
   position: fixed;
   bottom: 0;
@@ -37,17 +35,15 @@
   font-size: 0.7rem;
 }
 
-/* —— 桌面端底部栏 —— */
+
 .desktop-footer {
   display: none;
 }
 
 @media (min-width: 768px) {
-  /* 隐藏移动端导航 */
   .mobile-nav {
     display: none;
   }
-  /* 显示桌面端底部栏 */
   .desktop-footer {
     display: block;
     position: fixed;
